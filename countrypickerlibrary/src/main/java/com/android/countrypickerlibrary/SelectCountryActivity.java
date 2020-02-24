@@ -1,16 +1,16 @@
 package com.android.countrypickerlibrary;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 import java.util.Objects;
@@ -69,8 +69,8 @@ public class SelectCountryActivity extends AppCompatActivity {
             public void onItemClick(Country country) {
                 Intent intent = new Intent();
                 intent.putExtra("data", country);
-                SelectCountryActivity.this.setResult(CountryPickerConstants.SELECT_COUNTRY_REQUEST_CODE, intent);
-                SelectCountryActivity.this.finish();
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
     }
