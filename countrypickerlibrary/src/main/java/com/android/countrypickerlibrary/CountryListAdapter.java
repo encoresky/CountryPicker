@@ -43,7 +43,6 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
     public void onBindViewHolder(@NonNull CountryListAdapter.ViewHolder holder, int position) {
         final Country country = countries.get(position);
         holder.name.setText(country.getCountryName());
-        Log.d("languages", "onBindViewHolder: " + country.getCountryName());
         String drawableName = country.getIsoCode().toLowerCase(Locale.ENGLISH) + "_flag";
         holder.icon.setImageResource(Utils.getMipmapResId(context, drawableName));
         if(onItemClickListener!= null){
