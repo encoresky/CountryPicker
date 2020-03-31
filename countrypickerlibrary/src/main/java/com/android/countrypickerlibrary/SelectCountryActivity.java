@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +36,12 @@ public class SelectCountryActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         context = this;
+        findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         recyclerView = findViewById(R.id.recyclerView);
         searchView = findViewById(R.id.searchView);
 
