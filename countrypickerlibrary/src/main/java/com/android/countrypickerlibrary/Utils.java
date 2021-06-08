@@ -37,7 +37,7 @@ public class Utils {
         return null;
     }
 
-    public static List<Country> parseCountries(JSONObject jsonCountries, Context context) {
+    public static List<Country> parseCountries(JSONObject jsonCountries, Context context, String languageCode) {
         List<Country> countries = new ArrayList<>();
         Iterator<String> iter = jsonCountries.keys();
 
@@ -46,7 +46,7 @@ public class Utils {
             try {
                 String dialingCode = (String) jsonCountries.get(isoCode);
                 String countryName;
-                countryName = new Locale(context.getResources().getConfiguration().locale.getLanguage(), isoCode).getDisplayCountry();
+                countryName = new Locale(languageCode, isoCode).getDisplayCountry();
                 countries.add(new Country(isoCode, dialingCode, countryName));
             } catch (JSONException e) {
                 e.printStackTrace();
