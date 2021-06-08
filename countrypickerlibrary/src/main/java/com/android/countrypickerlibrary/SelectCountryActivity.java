@@ -65,7 +65,7 @@ public class SelectCountryActivity extends AppCompatActivity {
 
             }
         });
-        countryList = Utils.parseCountries(Objects.requireNonNull(Utils.getCountriesJSON(context)), context);
+        countryList = Utils.parseCountries(Objects.requireNonNull(Utils.getCountriesJSON(context)), context, "en");
         countryListAdapter = new CountryListAdapter(SelectCountryActivity.this, showDialingCode);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
